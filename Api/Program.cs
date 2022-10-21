@@ -31,7 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+//validacion
 app.UseCors("UserOrigins");
 
 app.UseHttpsRedirection();

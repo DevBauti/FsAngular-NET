@@ -1,18 +1,18 @@
-<div *ngIf="user">
+<div *ngIf="user" class="">
     <h2>{{ user.name }}</h2>
-    <div>
-        Name:
-        <input [(ngModel)]="user.name" placeholder="Name" />
+    <div class="mb-2">
+        <label class="form-label ">Nick: </label>
+        <input class="form-control" [(ngModel)]="user.name" placeholder="Nick" />
     </div>
-    <div>
-        Fist Name:
-        <input [(ngModel)]="user.firstName" placeholder="First Name">
+    <div class="mb-2">
+        <label class="form-label">First Name: </label>
+        <input  class="form-control" [(ngModel)]="user.firstName" placeholder="First Name">
     </div>
-    <div>
-        Last Name:
-        <input [(ngModel)]="user.lastName" placeholder="Last Name">
+    <div class="mb-2">
+        <label class="form-label">Last Name: </label> 
+        <input class="form-control" [(ngModel)]="user.lastName" placeholder="Last Name">
     </div>
-    <button (click)="updateUser(user)" *ngIf="user.id" >Save</button>
-    <button (click)="deleteUser(user)" *ngIf="user.id" >Delete</button>
-    <button (click)="createUser(user)" *ngIf="!user.id" >Create</button>
+    <button class="btn btn-primary btn-sm me-2" (click)="updateUser(user)" *ngIf="user.id">Save</button>
+    <button class="btn btn-outline-danger btn-sm me-2" (click)="deleteUser(user)" *ngIf="user.id">Delete</button>
+    <button class="btn btn-primary btn-sm me-2" (click)="createUser(user)" *ngIf="!user.id">Create</button>
 </div>

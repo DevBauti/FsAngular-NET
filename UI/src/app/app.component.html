@@ -1,22 +1,29 @@
-<button (click)="initNewUser()">Create New User</button>
+<div class="row">
+  <h2 >Nicks</h2>
+  <div class="col-sm-6 pe-3">
 
-<table>
-  <thead>
-    <th>Name</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{user.name}}</td>
-      <td>{{user.firstName}}</td>
-      <td>{{user.lastName}}</td>
-      <td><button (click)="editUser(user)">Edit</button></td>
-    </tr>
-  </tbody>
-</table>
+    <table class="table table-sm ">
+      <thead>
+        <th scope="col">Nick</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+      </thead>
+      <tbody class="">
+        <tr *ngFor="let user of users" scope="row">
+          <td>{{user.name}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td><button class="btn btn-secondary btn-sm " (click)="editUser(user)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
 
-<app-edit
-  [user]="userToEdit"
-  (userUpdated)="updateUserList($event)"
-></app-edit>
+    <div class="my-1">
+      <button class="btn btn-primary btn-sm " (click)="initNewUser()">Create New User</button>
+    </div>
+
+  </div>
+  <div class="col-sm-6">
+    <app-edit [user]="userToEdit" (userUpdated)="updateUserList($event)"></app-edit>
+  </div>
+</div>
